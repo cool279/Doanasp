@@ -1,0 +1,215 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register src="ThongKeTruyCap.ascx" tagname="ThongKeTruyCap" tagprefix="uc1" %>
+
+<%@ Register src="MenuTREE.ascx" tagname="MenuTREE" tagprefix="uc2" %>
+
+<%@ Register src="MenuQuangCao_Right.ascx" tagname="MenuQuangCao_Right" tagprefix="uc3" %>
+
+<%@ Register src="MenuDangNhap.ascx" tagname="MenuDangNhap" tagprefix="uc4" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">        
+        .style3
+        {
+            width: 605px;
+        }
+        .ads {	position:fixed;top:200px;border:solid 1px #fff;background-color: #c0c0c0;}
+        .style5
+        {
+            text-decoration: none;
+        }
+        .style6
+        {
+            width: 175px;
+        }
+        .style7
+        {
+            width: 315px;
+        }
+        </style>
+        
+        <script type="text/javascript">
+	        function startTimer()
+	        {
+		        var today=new Date();   
+		        var dd=today.getDate();
+		        var MM=today.getMonth();
+		        var yy=today.getFullYear();     		
+		        var h=today.getHours();
+		        var m=today.getMinutes();
+		        var s=today.getSeconds();
+		        // Thêm 0 trước nếu nhỏ hơn 10
+		        m=checkTime(m);
+		        s=checkTime(s);        		
+		        // chèn vào trong thẻ div
+		        document.getElementById('myDiv').innerHTML=h+":"+m+":"+s; 		
+		        t=setTimeout('startTimer()',1000);
+	        }
+	        function checkTime(i)
+	        {
+		        if (i<10)
+	  	        {
+	  		        i="0" + i; // thêm 0 trước
+	  	        }
+		        return i; // trả về 
+	        }
+        </script>
+    
+</head>
+<body style="background-image:url(ImageMain/bgPhapBong.gif);background-repeat:repeat-x" onload="startTimer()">
+    <form id="form1" runat="server">
+    
+     <div class="ads" style="border: 0% none #000000; left:0px;" 
+         title="Click vào để đăng ký tham gia" >
+        <a href="#" target=_blank>
+        <img src="ImageMain/DangKyNhanh.png" border="0"></a>      
+     </div>    
+                
+     <div>         
+        <table class="WidthPage" align="center">
+            <tr>
+                <td align="center" colspan="3">
+                    <table style="width:900px;" cellspacing="0">
+                        <tr>
+                            <td style="background-image:url(ImageMain/top-menu-bg.png); background-repeat:repeat-x; " 
+                                align="left" class="style7">
+                                &nbsp;<asp:Label ID="lbDate" runat="server"></asp:Label><b id="myDiv"></b></td>
+                            <td align="right" 
+                                     style="background-image:url(ImageMain/top-menu-bg.png); background-repeat:repeat-x;" 
+                                     valign="middle">
+                                <asp:TextBox ID="TextBox1" runat="server" Height="20px"></asp:TextBox>
+&nbsp;<asp:Button ID="btnTimkiem" runat="server" Text="Tìm kiếm" onclick="btnTimkiem_Click" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="3">
+                    <table style="width:100%;">
+                        <tr style="height:200">
+                            <td width="auto" style="background-image:url(ImageMain/BannerRight.gif);background-repeat:no-repeat;background-position:left;">                                                                                         
+                            </td>
+                            <td  style="background-image:url(ImageMain/PannerLeft.gif);background-repeat:no-repeat;background-position:right;" 
+                                width="323" height="89">
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="3"  rowspan="1" scope="row">
+                    <asp:Menu ID="Menu1" runat="server" Font-Bold="True" Font-Size="Large" 
+                        ForeColor="White" Orientation="Horizontal" Height="30px" 
+                        StaticSubMenuIndent="12px">
+                        <StaticMenuStyle BackColor="#99CCFF" Width="100%" />
+                        <StaticSelectedStyle BackColor="#0066FF" />
+                        <DynamicHoverStyle BackColor="#FF6666" Font-Bold="False" />
+                        <DynamicSelectedStyle BackColor="#0000CC" />
+                        <DynamicMenuItemStyle BackColor="#3399FF" Font-Bold="False" />
+                        <StaticHoverStyle BackColor="#FF6666" />
+                        <Items>
+                            <asp:MenuItem Text="Trang Chủ" Value="TrangChu" NavigateUrl="~/TrangChu.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="| Học thi" Value="Hocthi">
+                                <asp:MenuItem Text="Luật" Value="Luat"></asp:MenuItem>
+                                <asp:MenuItem Text="Biển báo" Value="Bienbao"></asp:MenuItem>
+                                <asp:MenuItem Text="Sa hình" Value="Sahinh"></asp:MenuItem>
+                                <asp:MenuItem Text="Luyện tập" Value="Luyentap"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="| Thi kiểm tra" Value="ThiKT">
+                                <asp:MenuItem Text="Thi" Value="Thi"></asp:MenuItem>
+                                <asp:MenuItem Text="Thông tin liên quan" Value="Thongtinlienquan">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="| Tải tài liệu" Value="Taitailieu"></asp:MenuItem>
+                            <asp:MenuItem Text="| Tin tức và sự kiện" Value="TintucvaSukien"></asp:MenuItem>
+                            <asp:MenuItem Text="| Diễn đàn" Value="Diendan"></asp:MenuItem>
+                            <asp:MenuItem Text="| Liên hệ" Value="Lienhe"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    &nbsp;&nbsp;
+                 
+                    <br />
+                 <marquee scrollamount="3" behavior="left" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 3, 0);">
+                    <a href="linkNgoChiToan-hocthi.html" style="color:red;">
+                        Xin chào bạn đã đến với trang web <b>Hỗ trợ học và thi luật giao thông trên mạng</b>
+                    </a></marquee>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" class="style6">
+                    <table width="180" >
+                        <tr>
+                            <td>
+                                <uc2:MenuTREE ID="MenuTREE1" runat="server" />
+                                <br />
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" align="left" width="180">
+                                <uc4:MenuDangNhap ID="MenuDangNhap1" runat="server" />
+                            <br />
+                                <table border="0" cellpadding="4" cellspacing="0" style="border-color:#0066FF;border-width:1px;border-style:solid;border-collapse:collapse;" width="100%">
+                                    <tr>
+                                        <td align="center" class="HeadText">
+                                            <b>Tư vấn viên</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="ymsgr:sendim?chitoan77" title="Mr Ngô Chí Toản" class="style5" >
+                                <img style="padding:0 0 5px 10px; clip: rect(auto, auto, auto, auto);" 
+                                                src="ImageMain/YMonline.gif" align="left">&nbsp;
+                                Tư vấn thi</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                <a href="ymsgr:sendim?tranthequan1212002" title="Mr Trần Thế quân" class="style5" >
+                                <img style="padding:0 0 5px 10px;" src="ImageMain/YMonline.gif" align="left">&nbsp;
+                                Tư vấn luật</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <uc1:ThongKeTruyCap ID="ThongKeTruyCap1" runat="server" />
+                                <br />
+                            </td>
+                        </tr>
+                    </table>
+                    
+                     </td>
+                <td class="style3" valign="top"><!--Phần nội dung-->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                   
+                </td>
+                <td width="15%" valign="top">  
+                    <!--Phần quảng cáo-->
+                    <marquee width="100%" height="90%" onmouseout="this.start()" onmouseover="this.stop()" scrollamount="2" scrolldelay="100" direction="down" behavior="loop">
+                    <uc3:MenuQuangCao_Right ID="MenuQuangCao_Right1" runat="server" /></marquee>                  
+                </td>
+            </tr>
+            <tr ><!--Phần footer-->
+                <td align="center" colspan="3" style="background-position: center; background-image:url(ImageMain/footer1.jpg); background-repeat: no-repeat; height=auto; width=auto">
+                    Trường ĐH Ngoại ngữ tin học - Bộ môn ASP.netti ngữ tin học - Bộ môn ASP.nett<br />
+                    <blink>Năm 2011 &copy Chí Toản, Thế quân</blink><br />
+                    <br />
+                </td>
+            </tr>
+        </table>
+         
+    </div>
+    </form>
+</body>
+</html>

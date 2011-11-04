@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DoAn ASPnet", "..\", "{4FD210CB-245F-4ECD-A8B9-D8014ED1C44B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/DoAn ASPnet"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\DoAn ASPnet\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\DoAn ASPnet\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/DoAn ASPnet"
+		Release.AspNetCompiler.PhysicalPath = "..\..\DoAn ASPnet\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\DoAn ASPnet\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49310"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FD210CB-245F-4ECD-A8B9-D8014ED1C44B}.Debug|.NET.ActiveCfg = Debug|.NET
+		{4FD210CB-245F-4ECD-A8B9-D8014ED1C44B}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
